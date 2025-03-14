@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate PIN | ProBank</title>
+    <link rel="stylesheet" href="{% static 'css/pin_generation.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p class="title">WELCOME TO PROBANK</p>
+        <p class="message">GENERATE YOUR PIN</p>
+
+        <label for="account_number">
+            <span>Account Number</span>
+            <input type="number" name="account_number" id="account_number" required>
+        </label>
+
+        <label for="mobile">
+            <span>Mobile Number</span>
+            <input type="number" name="mobile" id="mobile" required>
+        </label>
+
+        <label for="pin">
+            <span>Enter PIN</span>
+            <input type="number" name="pin" id="pin" required>
+        </label>
+
+        <label for="cpin">
+            <span>Confirm PIN</span>
+            <input type="number" name="cpin" id="cpin" required>
+        </label>
+
+        <button type="submit">Submit</button>
+
+        <p style="color: black;">Don't have an account? <a href="{% url 'Profile' %}">Create Account</a></p>
+    </form>
+</body>
+</html>

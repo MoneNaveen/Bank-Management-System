@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="../static/css/navbar.css">
+<nav class="navbar">
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}" alt="Bank Logo">
+        <span>ProBank</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{% url 'Home' %}">Home</a></li>
+        <li><a href="{% url 'Home' %}">About</a></li>
+        <li><a href="{% url 'Home' %}">Help</a></li>
+    </ul>
+</nav>

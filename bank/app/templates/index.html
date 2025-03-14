@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management System</title>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <main class="icon-container">
+        <div class="flex main-container">
+            <div class="flex-col">
+                <img src="../static/images/profile_icon.jpg" alt="">
+                <a href="{% url 'Profile' %}"><h3>Profile</h3></a>
+            </div>
+            <div class="flex-col">
+                <img src="../static/images/bank_key_icon.png" alt="">
+                <a href="{% url 'Pin_generation' %}"><h3>Pin</h3></a>
+            </div>
+            <div class="flex-col">
+                <img src="../static/images/wallet_icon.png" alt="">
+                <a href="{%url 'Balance' %}"><h3>Balance</h3></a>
+            </div>
+        </div> <br>
+        <div class="flex main-container">
+            <div class="flex-col">
+                <img src="../static/images/money_withdrawl_icon.png" alt="">
+                <a href="{% url 'Money_withdrawl' %}"><h3>Money Withdrawl</h3></a>
+            </div>
+            <div class="flex-col">
+                <img src="../static/images/money_depoit_icon.png" alt="">
+                <a href="{% url 'Deposit' %}"><h3>Deposit</h3></a>
+            </div>
+            <div class="flex-col">
+                <img src="../static/images/money_transfer_icon.png" alt="">
+                <a href="{% url 'Money_transefer' %}"><h3>Money Transfer</h3></a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

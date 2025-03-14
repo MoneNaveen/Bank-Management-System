@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit | Bank</title>
+    <link rel="stylesheet" href="{% static 'css/deposit.css' %}">
+    <script src="../static/javascript/deposit.js"></script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <main class="form-container">
+        <h2>Deposit Money</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+
+            <label for="account_number">Account Number</label>
+            <input type="number" name="account_number" id="account_number" required>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="number" name="mobile" id="mobile" required>
+
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" id="amount" required>
+
+            <button type="submit">Deposit</button>
+        </form>
+    </main>
+</body>
+</html>

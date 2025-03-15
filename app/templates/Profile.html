@@ -58,6 +58,7 @@
         <button class="close-btn" onclick="closePopup()">OK</button>
     </div>
 
+
     <div id="message-data" data-message="{% for message in messages %}{% if message.tags == 'success' %}show{% endif %}{% endfor %}"></div>
 
 <script>
@@ -69,7 +70,6 @@
         }
     });
 </script>
-
 
 </body>
 </html>

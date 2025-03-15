@@ -1,0 +1,190 @@
+/* ============================
+    General Page Styling
+============================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+}
+
+/* ============================
+    Form Container
+============================= */
+form {
+    background-color: white;
+    padding: 40px;
+    width: 45%;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+}
+
+/* Input Labels */
+form label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    margin-top: 5px;
+}
+
+/* ============================
+    Animated Transfer Button
+============================= */
+button {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease-in-out;
+    width: 100%;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+button:hover {
+    background: linear-gradient(45deg, #ff5733, #cc2b00);
+    transform: scale(1.05);
+}
+
+/* Click Effect */
+button:active {
+    transform: scale(0.95);
+}
+
+/* ============================
+    Money Transfer Animation
+============================= */
+button {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 15px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(255, 65, 108, 0.5);
+}
+
+/* Click Effect */
+button:active {
+    transform: scale(0.95);
+}
+
+/* ============================
+    Money Transfer Animation
+============================= */
+button::before {
+    content: "💸 Transferring...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Money Animation on Click */
+button.clicked::before {
+    font-size: 18px;
+    opacity: 1;
+    animation: fadeInOut 1.2s ease-in-out;
+}
+
+/* Send Money Animation */
+@keyframes send-money {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 50%);
+    }
+    50% {
+        transform: translate(-50%, -20%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -120%);
+    }
+}
+
+/* ============================
+    Money Flying Effect
+============================= */
+.money-fly {
+    position: absolute;
+    font-size: 20px;
+    animation: fly-money 1s linear forwards;
+}
+
+@keyframes fly-money {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ============================
+    Responsive Design
+============================= */
+@media screen and (max-width: 992px) {
+    form {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 85%;
+        padding: 30px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

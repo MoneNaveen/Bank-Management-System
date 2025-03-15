@@ -1,0 +1,140 @@
+/*===================================================
+                      NAVBAR
+====================================================*/
+
+/* Navbar Styling with Gradient */
+.navbar {
+    width: 100%;
+    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Vibrant Gradient */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Smooth Transition on Scroll */
+.navbar.scrolled {
+    background: linear-gradient(360deg, #5a0f9c, #1d5bcf); /* Darker gradient on scroll */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/*================ LOGO SECTION ================*/
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff; /* White Text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/*================ NAVIGATION LINKS ================*/
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; 
+    margin: 0;
+    padding: 0;
+    margin-right: 50px;
+}
+
+.nav-links li {
+    display: inline;
+    position: relative;
+}
+
+/* Animated Nav Links */
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 8px 15px; 
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Hover Effects */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* Background Change on Hover */
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 18px;
+}
+
+/*================ ICON CONTAINER ================*/
+.icon-container {
+    margin-top: 80px; 
+}
+
+/*================ BODY BACKGROUND ================*/
+body {
+    background-color: #1c1b29; /* Dark Background */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*================ MOBILE RESPONSIVENESS ================*/
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bank</title>
+    <link rel="stylesheet" href="../static/css/profile.css">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        {{form2}}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Ignore virtual environment
+bms/
+*.pyc
+__pycache__/
+
+# Django related
+db.sqlite3
+.env
+*.log
+
+# Ignore static and media files (optional)
+staticfiles/
+media/
+
+# VS Code settings (optional)
+.vscode/

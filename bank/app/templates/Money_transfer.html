@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Transfer | ProBank</title>
+    <link rel="stylesheet" href="{% static 'css/transfer.css' %}">
+    <script src="{% static 'javascript/transfer.js' %}"></script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <label for="acc">Account Number</label>
+        <input type="number" name="acc" id="acc" required>
+
+        <label for="tacc">To Account Number</label>
+        <input type="number" name="tacc" id="tacc" required>
+
+        <label for="amt">Amount</label>
+        <input type="number" name="amt" id="amt" required>
+
+        <label for="pin">PIN (4-digit)</label>
+        <input type="number" name="pin" id="pin" maxlength="4" required>
+
+        <button type="submit">Transfer Money</button>
+    </form>
+</body>
+</html>

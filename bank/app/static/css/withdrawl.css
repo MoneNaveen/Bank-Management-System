@@ -1,0 +1,173 @@
+/* ============================
+    General Page Styling
+============================= */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ============================
+    Form Container
+============================= */
+main.form-container {
+    background-color: white;
+    padding: 40px;
+    width: 50%;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 28px;
+}
+
+/* ============================
+    Labels & Inputs
+============================= */
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+/* ============================
+    Animated Withdraw Button
+============================= */
+button {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease-in-out;
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover Effect */
+button:hover {
+    background: linear-gradient(45deg, #ff2e63, #ff0000);
+    transform: scale(1.05);
+}
+
+/* Click Effect */
+button:active {
+    transform: scale(0.95);
+}
+
+/* ============================
+    Money Flying Effect
+============================= */
+button::after {
+    content: "💵💵💵";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    font-size: 0;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Animated Money Burst */
+button.clicked::after {
+    font-size: 30px;
+    opacity: 1;
+    top: -60px;
+    animation: money-fly 1s ease-in-out;
+}
+
+/* Money Flying Animation */
+@keyframes money-fly {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 50%);
+    }
+    50% {
+        transform: translate(-50%, -20%);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -120%);
+    }
+}
+
+/* ============================
+    Falling Money Animation 
+============================= */
+.money-fall {
+    position: absolute;
+    font-size: 20px;
+    animation: money-drop 1s linear forwards;
+}
+
+@keyframes money-drop {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ============================
+    Responsive Design 
+============================= */
+@media screen and (max-width: 992px) {
+    main.form-container {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main.form-container {
+        width: 85%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

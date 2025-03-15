@@ -1,0 +1,122 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f4f4f9; */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form Container */
+form {
+    background-color: white;
+    padding: 40px;
+    width: 45%;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Title & Message */
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.message {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Labels & Inputs */
+label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    margin-top: 5px;
+}
+
+/* Submit Button */
+button {
+    background-color: #28a745; /* Green Theme */
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838; /* Darker Green */
+}
+
+/* Create Account Link */
+p {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    form {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 85%;
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank</title>
-    <link rel="stylesheet" href="../static/css/profile.css">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         /* Popup styling */
@@ -57,21 +58,18 @@
         <button class="close-btn" onclick="closePopup()">OK</button>
     </div>
 
-    <script>
-        function closePopup() {
-            document.getElementById('successPopup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
+    <div id="message-data" data-message="{% for message in messages %}{% if message.tags == 'success' %}show{% endif %}{% endfor %}"></div>
 
-        $(document).ready(function() {
-            {% for message in messages %}
-                {% if message.tags == "success" %}
-                    $("#successPopup").show();
-                    $("#overlay").show();
-                {% endif %}
-            {% endfor %}
-        });
-    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let messageData = document.getElementById("message-data").getAttribute("data-message");
+        if (messageData === "show") {
+            document.getElementById("successPopup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+    });
+</script>
+
 
 </body>
 </html>
